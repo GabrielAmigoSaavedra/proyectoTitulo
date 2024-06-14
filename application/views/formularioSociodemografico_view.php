@@ -19,7 +19,8 @@
 
 <div class="container">
 	
-    <h1>Formulario Sociodemografico:</h1>
+    <h1>Formulario Sociodemografico</h1>
+    <h4>En esta sección deberá ingresar sus datos personales. Una vez que envíe este formulario, deberá responder la encuesta de motivación y estrategias de estudio</h4>
 
     <br>
 
