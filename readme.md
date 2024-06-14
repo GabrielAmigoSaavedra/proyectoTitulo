@@ -1,8 +1,3 @@
-- El SW lo deberán subir en un repositorio ya sea github o gitlab. 
-- El repositorio debe tener un archivo Readme.md. 
-- El archivo Readme.md debe tener la siguiente información: Título del proyecto, integrantes y una breve descripción del proyecto, y tecnologías que han usado. 
-- En el mismo repositorio incluir front-end  y back-end, pueden crear dos ramas una de front-end y otra de back-end.
-- Si la DB es relacional, deben incluir la base de datos, es decir el archivo .sql. 
 
 
 titulo de proyecto: Aplicación Web de evaluación psicoeducativa para estudiantes de primer año de la Pontificia Universidad Católica de Valparaíso
