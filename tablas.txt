@@ -1,0 +1,194 @@
+
+CREATE TABLE `Usuarios` (
+  `idUsuarios` int NOT NULL AUTO_INCREMENT,
+  `rol` int,
+  `rutUsuario` varchar(20),
+  `nombres` varchar(250),
+  `apellidoPaterno` varchar(250),
+  `apellidoMaterno` varchar(250),
+  `habilitado` boolean,
+  `contrasena` varchar(11),
+  PRIMARY KEY (`idUsuarios`)
+);
+
+CREATE TABLE `PreguntasCuestionarioMSLQ` (
+  `idPregunta` int NOT NULL AUTO_INCREMENT,
+  `pregunta` varchar(250),
+  PRIMARY KEY (`idPregunta`)
+);
+
+CREATE TABLE `RespuestasDeEncuestaMSLQ` (
+  `idRespuesta` int NOT NULL AUTO_INCREMENT,
+   `resPregunta1` int	NOT NULL,
+  `resPregunta2` int	NOT NULL,
+  `resPregunta3` int	NOT NULL,
+  `resPregunta4` int	NOT NULL,
+  `resPregunta5` int	NOT NULL,
+  `resPregunta6` int	NOT NULL,
+  `resPregunta7` int	NOT NULL,
+  `resPregunta8` int	NOT NULL,
+  `resPregunta9` int	NOT NULL,
+  `resPregunta10` int	NOT NULL,
+  `resPregunta11` int	NOT NULL,
+  `resPregunta12` int	NOT NULL,
+  `resPregunta13` int	NOT NULL,
+  `resPregunta14` int	NOT NULL,
+  `resPregunta15` int	NOT NULL,
+  `resPregunta16` int	NOT NULL,
+  `resPregunta17` int	NOT NULL,
+  `resPregunta18` int	NOT NULL,
+  `resPregunta19` int	NOT NULL,
+  `resPregunta20` int	NOT NULL,
+  `resPregunta21` int	NOT NULL,
+  `resPregunta22` int	NOT NULL,
+  `resPregunta23` int	NOT NULL,
+  `resPregunta24` int	NOT NULL,
+  `resPregunta25` int	NOT NULL,
+  `resPregunta26` int	NOT NULL,
+  `resPregunta27` int	NOT NULL,
+  `resPregunta28` int	NOT NULL,
+  `resPregunta29` int	NOT NULL,
+  `resPregunta30` int	NOT NULL,
+  `resPregunta31` int	NOT NULL,
+  `resPregunta32` int	NOT NULL,
+  `resPregunta33` int	NOT NULL,
+  `resPregunta34` int	NOT NULL,
+  `resPregunta35` int	NOT NULL,
+  `resPregunta36` int	NOT NULL,
+  `resPregunta37` int	NOT NULL,
+  `resPregunta38` int	NOT NULL,
+  `resPregunta39` int	NOT NULL,
+  `resPregunta40` int	NOT NULL,
+  `resPregunta41` int	NOT NULL,
+  `resPregunta42` int	NOT NULL,
+  `resPregunta43` int	NOT NULL,
+  `resPregunta44` int	NOT NULL,
+
+  PRIMARY KEY (`idRespuesta`)
+);
+
+CREATE TABLE `FormularioSociodemografico` (
+  `idFormulario` int NOT NULL AUTO_INCREMENT,
+  `nombres` varchar(100),
+  `apellidos` varchar(100),
+  `carrera` int,
+  `genero` int NOT NULL,
+  `edad` int NOT NULL,
+  `nacionalidad` varchar(100) NOT NULL,
+  `carreraPrimeraOpcion` varchar(100),
+  `convivencia` int NOT NULL,
+  `tiempoDeTrasladoHastaLaEscuela` int NOT NULL,
+  `carreraDeProcedencia` varchar(100),
+  `razonParaElegir` varchar(100),
+  `condicionMental` varchar(250),
+  `beneficioDeGratuidad` int ,
+  PRIMARY KEY (`idFormulario`)
+);
+
+CREATE TABLE `Encuesta_Alumno` (
+  `idEncuestaAlumno` int NOT NULL AUTO_INCREMENT,
+  `fechaDeCreacion` varchar(100),
+  `idAlumno` int NOT NULL,
+  `idFormularioSociodemografico` int NOT NULL,
+  `idRespuestasDeEncuestaMSLQ` int NOT NULL,
+  `idDimensionResultados` int NOT NULL,
+  PRIMARY KEY (`idEncuestaAlumno`)
+);
+
+CREATE TABLE `TiempoDeTraslado` (
+  `idTiempoDeTraslado` int NOT NULL AUTO_INCREMENT,
+  `opcionesDeTiempo` varchar(100),
+  PRIMARY KEY (`idTiempoDeTraslado`)
+);
+
+CREATE TABLE `Carrera` (
+  `idCarrera` int NOT NULL AUTO_INCREMENT,
+  `nombreCarrera` varchar(100) NOT NULL,
+  PRIMARY KEY (`idCarrera`)
+);
+
+CREATE TABLE `Convivencia` (
+  `idConvivencia` int NOT NULL AUTO_INCREMENT,
+  `nombreConvivencia` varchar(100) NOT NULL,
+  PRIMARY KEY (`idConvivencia`)
+);
+
+CREATE TABLE `DimensionEncuesta` (
+  `idDimensionEncuesta` int NOT NULL AUTO_INCREMENT,
+  `dimension1` varchar(10)	NOT NULL,
+  `dimension2` varchar(10)	NOT NULL,
+  `dimension3` varchar(10)	NOT NULL,
+  `dimension4` varchar(10)	NOT NULL,
+  `dimension5` varchar(10)	NOT NULL,
+
+  PRIMARY KEY (`idDimensionEncuesta`)
+);
+
+CREATE TABLE `Genero` (
+  `idGenero` int NOT NULL AUTO_INCREMENT,
+  `nombreGenero` varchar(100) NOT NULL,
+  PRIMARY KEY (`idGenero`)
+);
+
+CREATE TABLE `Pacientes` (
+  `idPaciente` int NOT NULL AUTO_INCREMENT,
+  `fechaInicio` varchar(50) NOT NULL,
+  `fechaFinalizacion` varchar(50) NULL,
+  `idProfMedico`  int NOT NULL,
+  `idAlumno`  int NOT NULL,
+  PRIMARY KEY (`idPaciente`)
+);
+
+CREATE TABLE Roles_De_Usuario (
+  `idRol` int NOT NULL AUTO_INCREMENT,
+  `nombreRol` varchar(100) NOT NULL,
+  PRIMARY KEY (`idRol`)
+);
+
+
+
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Prefiero las materias que son difíciles o desafiantes, porque aprendo cosas nuevas.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('A diferencia de otras personas, yo siempre espero rendir bien.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Me pongo tan nervioso en las evaluaciones, que no puedo recordar la información que aprendí.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Para mí es importante entender lo que se enseña en las clases. ');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Me gusta lo que aprendo en clases.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Sé que entiendo bien las ideas que se dan a conocer en las asignaturas.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Soy capaz de utilizar lo que aprendo en una asignatura para aplicarlo a otras.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Siempre espero rendir bien en mis clases.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Creo que soy un buen estudiante.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Siempre investigo acerca de temas de los cuales aprenderé cosas nuevas, incluso si son difíciles o requieren más trabajo.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Tengo certeza de que puedo hacer un buen trabajo en los problemas y tareas que se me dan en las diferentes asignaturas.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Cuando rindo una evaluación, me siento incómodo y alterado.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Siento que tendré buenas calificaciones en mis asignaturas.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Incluso cuando me va mal en una evaluación, trato de aprender de mis errores.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Creo que lo que se me enseña en mis asignaturas es importante para mí.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Mis técnicas y hábitos de estudio son muy buenos.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Creo que lo que aprendemos en las diferentes asignaturas es siempre interesante.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Comparado con otros estudiantes, creo que sé muchas cosas.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Sé que lograré aprender las materias de mis asignaturas.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Siempre me preocupo mucho ante una evaluación.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Entender mis materias es muy importante para mí.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Cuando rindo una evaluación pienso en lo mal que me está yendo.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Cuando estudio para una prueba, trato de relacionar la información de clases y la información de los libros.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Cuando hago trabajos en casa, trato de recordar lo que dijo el profesor en clases para poder realizar la tarea correctamente.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Constantemente me hago preguntas para asegurarme de que aprendí bien lo que estudié.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Me es difícil poder determinar cuáles son las ideas principales en las cosas que leo.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Cuando la materia es difícil, me rindo o simplemente trabajo en las partes más fáciles.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Cuando estudio, elaboro las ideas importantes con mis propias palabras (no las aprendo de manera textual).');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Siempre trato de entender lo que el profesor dice, incluso si para mí no tiene sentido o es difícil.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Cuando estudio para una prueba, trato de recordar lo más que se puede.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Cuando estudio reviso mis apuntes para ayudarme a recordar el resto de la materia.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Hago ejercicios y completo cuestionarios o guías de trabajo incluso cuando no tengo que hacerlo por obligación.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Incluso cuando la materia es difícil o incomprensible, trato de seguir trabajando hasta terminar.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Cuando estudio para una prueba, práctica repitiendo los conceptos una y otra vez.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Antes de empezar a estudiar pienso en las cosas que necesitaré hacer para aprender la materia.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Uso lo que he aprendido anteriormente en otras materias, libros o tareas para entender materias nuevas.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Usualmente me encuentro leyendo algo para mis clases, pero no he entendido nada de lo que estoy leyendo.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Usualmente, cuando el profesor habla, yo pienso en otras cosas y realmente no pongo atención a lo que está diciendo.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Cuando estudio una materia, trato de relacionar todos los temas para que tengan sentido.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Cuando leo, me detengo de vez en cuando y vuelvo atrás para leer de nuevo lo que ya leí.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Cuando estudio una materia, me digo a mi mismo las palabras una y otra vez para ayudarme a recordar.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Subrayo las ideas en mis libros y apuntes para ayudarme a estudiar.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Me esfuerzo mucho por conseguir buenas calificaciones, incluso si no me gusta la asignatura.');
+INSERT INTO `preguntascuestionariomslq`(`pregunta`) VALUES ('Cuando leo, trato de conectar aquello que estoy leyendo con lo que ya conozco, sé y manejo.');
+
