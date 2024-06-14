@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="<?php echo base_url('assets/bootstrap.min.css')?>"
       rel="stylesheet">
-    <title>Document</title>
+    <h1>cuestionarioMSLQ_view</h1>
 </head>
 <body>
 
