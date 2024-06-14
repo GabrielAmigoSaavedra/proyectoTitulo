@@ -11,7 +11,8 @@
 
     <div class="container">
 
-    <h1>cuestionarioMSLQ_view</h1>
+    <h1>Cuestionario de Motivacion y Estrategias de estudio</h1>
+    <h1>En esta sección deberá responder todas las preguntas eligiendo la opción que esté más acertada. Los valores vas de 1 (Totalmente en desacuerdo) y 7 (Totalmente de acuerdo) </h1>
 
 <br />
 <hr />
